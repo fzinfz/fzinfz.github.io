@@ -26,7 +26,7 @@
             <h3 class="text-muted" class="text-center">Ferro's Home</h3>
         </div>
         <div class="container">
-            <h1>System Administration Notes</h1>
+            <h1>System Infrastructure Notes</h1>
             <p>
                 <div>
                     <div class="btn-group" role="group" aria-label="Linux">
@@ -42,7 +42,7 @@
                     <div class="btn-group" role="group" aria-label="Virtualization">
                         <a class="btn btn-outline-info" href="https://www.ferro.pro/VT/" ID="vt">Virtualization</a>
                         <a class="btn btn-outline-info" href="https://www.ferro.pro/VT/libvirt.html" ID="virt">Libvirt</a>
-                        <a class="btn btn-outline-info" href="https://www.ferro.pro/VT/VDI_Intel_GVTg.html" ID="gvt">KVMGT</a>
+                        <a class="btn btn-outline-info" href="https://www.ferro.pro/VT/Intel_GVTg.html" ID="gvt">KVMGT</a>
                     </div>
                     <a class="btn btn-primary" href="https://fzinfz.gitbooks.io/notes/" role="button" ID="gitbook">More »</a>
                 </div>
@@ -79,7 +79,7 @@
                     <a class="btn btn-info" href="https://www.ferro.pro/git.html">Git Notes</a>
                 </div>
                 <div class="btn-group" role="group" aria-label="Jupyer">
-                    <a class="btn btn-secondary" href="http://nbviewer.jupyter.org/github/fzinfz/scripts/tree/master/jupyter/" ID="jupyter">Jupyter Notes</a>
+                    <a class="btn btn-secondary" href="http://nbviewer.jupyter.org/github/fzinfz/scripts/tree/master/jupyter/" ID="jupyter">.ipynb Notes</a>
                 </div>
             </p>
         </div>
@@ -90,7 +90,7 @@
                 <a href="https://www.gitbook.com/@fzinfz">Gitbook</a>&ensp;|&ensp;
                 <a href="http://www.google.com/recaptcha/mailhide/d?k=01rQhzKwycTYGCMJyEIVxtBA==&amp;c=hks_mx91twf-A3l9x0zOEg__dwwQDkkzB8qOErBr5F4="
                     onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01rQhzKwycTYGCMJyEIVxtBA\x3d\x3d\x26c\x3dhks_mx91twf-A3l9x0zOEg__dwwQDkkzB8qOErBr5F4\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
-                    title="My gmail address">E-Mail</a>
+                    id="email">E-Mail</a>
             </P>
         </footer>
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
@@ -100,10 +100,19 @@
             crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
             crossorigin="anonymous"></script>
-
+        <script src="https://cdn.jsdelivr.net/gh/beatgammit/base64-js/base64js.min.js"></script>
         <script>
             $('a').attr('target', '_blank');
+
             $('a.btn').attr('style', 'margin-top:0.5rem');
+
+            const m = 'admin#'.replace(/#/, '@'.concat('ferro.pro'));
+            $('#email')
+                .removeAttr("onClick")
+                .attr('href', 'mailto:'.concat(m))
+                .on("click", function () {
+                    $('#email').text(m);
+                });
         </script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4845608-5"></script>
         <script>
