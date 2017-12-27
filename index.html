@@ -76,7 +76,7 @@
                     <a class="btn btn-secondary" href="http://nbviewer.jupyter.org/github/fzinfz/scripts/blob/master/jupyter/py.ipynb" ID="py_notes">Notes</a>
                 </div>
                 <div class="btn-group" role="group" aria-label="Git">
-                    <a class="btn btn-info" href="https://www.ferro.pro/git.html">Git Notes</a>
+                    <a class="btn btn-secondary" href="https://www.ferro.pro/git.html">Git Notes</a>
                 </div>
                 <div class="btn-group" role="group" aria-label="Jupyer">
                     <a class="btn btn-secondary" href="http://nbviewer.jupyter.org/github/fzinfz/scripts/tree/master/jupyter/" ID="jupyter">.ipynb Notes</a>
@@ -100,7 +100,7 @@
             crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
             crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/gh/beatgammit/base64-js/base64js.min.js"></script>
+
         <script>
             $('a').attr('target', '_blank');
 
@@ -108,10 +108,9 @@
 
             const m = 'admin#'.replace(/#/, '@'.concat('ferro.pro'));
             $('#email')
-                .removeAttr("onClick")
-                .attr('href', 'mailto:'.concat(m))
-                .on("click", function () {
-                    $('#email').text(m);
+                .on("mouseover", function () {
+                    $('#email').removeAttr("onClick")
+                        .text(m).attr('href', 'mailto:'.concat(m));
                 });
         </script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4845608-5"></script>
