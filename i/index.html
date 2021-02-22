@@ -15,27 +15,33 @@
 
 <body>
     <div class="conainer">
-        <div class="container" id="Notes">
-            <ul>
-                <li v-for="item in itmes">
-                    <div v-if="item.link">
-                        {{ item.desc }} <a class="btn btn-link" target="_blank" :href="item.link">{{ item.link }}</a>
+        <table class="table mx-5 mt-3" id="Notes">
+                <tr class="d-flex" v-for="item in itmes">
+                        <td class="col-2" v-if="item.link.length">{{ item.desc }}</td>
+                        <th class="col-2" v-else>{{ item.desc }}</th>
+                        <td class="col-10"><a target="_blank" :href="item.link">{{ item.link }}</a></td>
                     </div>
-                    <h2 v-else>{{ item.desc }}</h2>
-                </li>
-            </ul>
-        </div>
+                </tr>
+        </table>
     </div>
     <script>
         const s = `
-        VM-Docker |
+        7200U-VM-Docker |
         Jupyter | http://192.168.88.21:8888/tree?#running
         Jupyter-Lab | http://192.168.88.21:8888/lab
         LibreSpeed | http://192.168.88.21:82/
+        Portainer | http://192.168.88.21:9000/#!/1/docker/containers
         HTTP Headers | http://192.168.88.21/whoami
         scripts/docs | http://192.168.88.21:81/
-        VMs |
-        OpenWrt | http://192.168.88.20/
+        flask-dlt645 | http://192.168.88.21:5050/
+        influxdb | http://192.168.88.21:8086/
+
+        J1900 |
+        LibreSpeed | http://192.168.88.19:82/
+
+        7200U-VMs |
+        OpenWrt - passwall | http://192.168.88.20/cgi-bin/luci/admin/services/passwall
+        OpenWrt - SSR+ | http://192.168.88.48/cgi-bin/luci/admin/services/shadowsocksr
         `;
         const lines = s.split('\n').filter(line => line.includes("|"));
         var itmes = [];
