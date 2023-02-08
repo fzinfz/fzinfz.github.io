@@ -85,12 +85,11 @@
                 <a href="http://www.google.com/recaptcha/mailhide/d?k=01rQhzKwycTYGCMJyEIVxtBA==&amp;c=hks_mx91twf-A3l9x0zOEg__dwwQDkkzB8qOErBr5F4="
                     onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01rQhzKwycTYGCMJyEIVxtBA\x3d\x3d\x26c\x3dhks_mx91twf-A3l9x0zOEg__dwwQDkkzB8qOErBr5F4\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
                     id="email">E-Mail</a>
+                <span id="ip"></span>
             </P>
         </footer>
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-            crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
             integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
             crossorigin="anonymous"></script>
@@ -102,6 +101,11 @@
             $('a').attr('target', '_blank');
 
             $('a.btn').attr('style', 'margin-top:0.5rem');
+
+            $.getJSON("https://api.ipify.org/?format=json", function(e) {
+                console.log(e.ip);
+                $('#ip').text(" | " + e.ip);
+            });
 
             const m = 'admin#'.replace(/#/, '@'.concat('ferro.pro'));
             $('#email')
