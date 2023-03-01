@@ -68,7 +68,6 @@
         <p>
         <div class="btn-group" role="group">
             <a class="btn btn-outline-info" href="https://www.ferro.pro/linux/">Linux</a>
-            <a class="btn btn-outline-info" href="https://www.ferro.pro/linux/fs">File System</a>
             <a class="btn btn-outline-info" href="https://www.ferro.pro/linux/nw">Networking</a>
         </div>
 
@@ -77,7 +76,7 @@
         </div>
 
         <div class="btn-group" role="group">
-            <a class="btn btn-outline-info" href="https://www.ferro.pro/VT/">Virtualization</a>
+            <a class="btn btn-outline-info" href="https://www.ferro.pro/vt/">Virtualization</a>
         </div>
         </p>
     </div>
@@ -88,6 +87,7 @@
             <a href="http://www.google.com/recaptcha/mailhide/d?k=01rQhzKwycTYGCMJyEIVxtBA==&amp;c=hks_mx91twf-A3l9x0zOEg__dwwQDkkzB8qOErBr5F4="
                onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01rQhzKwycTYGCMJyEIVxtBA\x3d\x3d\x26c\x3dhks_mx91twf-A3l9x0zOEg__dwwQDkkzB8qOErBr5F4\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
                id="email">E-Mail</a>
+            <span id="load_time"></span>
             <span id="ip"></span>
         </P>
     </footer>
@@ -107,7 +107,6 @@
         $('a.btn').attr('style', 'margin-top:0.5rem');
 
         $.getJSON("https://api.ipify.org/?format=json", function (e) {
-            console.log(e.ip);
             $('#ip').text(" | " + e.ip);
         });
 
