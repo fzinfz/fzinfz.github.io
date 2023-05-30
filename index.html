@@ -26,20 +26,6 @@
         <h3 class="text-muted" class="text-center">Ferro's Home</h3>
     </div>
     <div class="container">
-        <h1>Web Tools</h1>
-        <p>
-        <div class="btn-group" role="group">
-            <a class="btn btn-outline-primary" href="https://html.ferro.pro/md.html">JQuery: Excel to Markdown
-            </a>
-        </div>
-        <div class="btn-group mx-3" role="group">
-            <a href="#" class="btn btn-outline-success disabled" tabindex="-1" aria-disabled="true" role="button" data-bs-toggle="button">Vue3</a>
-            <a role="button" class="btn btn-outline-success" href="https://html.ferro.pro/txt.html">Text Tools</a>
-            <a role="button" class="btn btn-outline-success" href="https://html.ferro.pro/vue/v3_text2links/">Text to HTML Links</a>
-        </div>
-        </p>
-    </div>
-    <div class="container">
         <h1>Scripts on Github</h1>
         <p>
 
@@ -52,7 +38,7 @@
             <a class="btn btn-outline-info" href="https://github.com/fzinfz/scripts/tree/master/apps_docker">docker
                 run</a>
         </div>
-        <div class="btn-group mx-2" role="group">
+        <div class="btn-group" role="group">
             <a class="btn btn-outline-info" href="https://github.com/fzinfz/ansible">Ansible</a>
         </div>
         <div class="btn-group mx-2" role="group">
@@ -73,24 +59,28 @@
             <a class="btn btn-outline-info" href="https://notes.ferro.pro/linux/nw">Networking</a>
         </div>
 
-        <div class="btn-group  mx-3" role="group">
+        <div class="btn-group mx-3" role="group">
             <a class="btn btn-outline-info" href="https://notes.ferro.pro/nw/">Networking</a>
         </div>
 
         <div class="btn-group" role="group">
             <a class="btn btn-outline-info" href="https://notes.ferro.pro/vt/">Virtualization</a>
         </div>
+
+        <div class="btn-group mx-3" role="group">
+            <a class="btn btn-outline-success" href="https://notes.ferro.pro/apps/web/">Web Tools</a>
+        </div>
         </p>
     </div>
     <footer class="footer d-flex justify-content-center">
         <P>
-            <a href="https://github.com/fzinfz/">Github</a>&ensp;|&ensp;
-            <a href="https://hub.docker.com/r/fzinfz/">Docker Hub</a>&ensp;|&ensp;
-            <a href="http://www.google.com/recaptcha/mailhide/d?k=01rQhzKwycTYGCMJyEIVxtBA==&amp;c=hks_mx91twf-A3l9x0zOEg__dwwQDkkzB8qOErBr5F4="
-               onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01rQhzKwycTYGCMJyEIVxtBA\x3d\x3d\x26c\x3dhks_mx91twf-A3l9x0zOEg__dwwQDkkzB8qOErBr5F4\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
-               id="email">E-Mail</a>
-            <span id="load_time"></span>
+            <a href="https://github.com/fzinfz/">Github</a>
+            &ensp;|&ensp;
+            <a href="https://hub.docker.com/r/fzinfz/">Docker Hub</a>            
+            &ensp;|&ensp;
+            <a href="#" id="email">E-Mail</a>
             <span id="ip"></span>
+
         </P>
     </footer>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
@@ -108,16 +98,18 @@
 
         $('a.btn').attr('style', 'margin-top:0.5rem');
 
+/*
         $.getJSON("https://api.ipify.org/?format=json", function (e) {
             $('#ip').text(" | " + e.ip);
         });
+*/
 
         const m = 'admin#'.replace(/#/, '@'.concat('ferro.pro'));
         $('#email')
             .on("mouseover", function () {
-                $('#email').removeAttr("onClick")
-                    .text(m).attr('href', 'mailto:'.concat(m));
+                $('#email').text(m).attr('href', 'mailto:'.concat(m));
             });
+
     </script>
 
     <!-- Cloudflare Web Analytics -->
